@@ -956,7 +956,6 @@ textarea { resize: vertical; min-height: 100px; }
    RESPONSIVE
    =========================================== */
 @media (max-width: 1100px) {
-  .doctors-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 48px; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .testimonials-grid { grid-template-columns: 1fr 1fr; }
