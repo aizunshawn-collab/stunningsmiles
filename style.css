@@ -264,11 +264,12 @@ p  { font-size: 1rem; color: var(--body); }
    =========================================== */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   background: var(--dark);
+  padding: 60px 0;
 }
 
 .hero-bg {
@@ -950,8 +951,8 @@ textarea { resize: vertical; min-height: 100px; }
   }
   .nav-links.open { display: flex; }
   .hamburger { display: flex; }
-  .hero { min-height: 80vh; text-align: center; }
-  .hero-content { padding: 60px 24px; grid-template-columns: 1fr; gap: 32px; }
+  .hero { min-height: unset; text-align: center; }
+  .hero-content { padding: 48px 24px; grid-template-columns: 1fr; gap: 32px; }
   .hero-ctas { justify-content: center; }
   .hero-badges { justify-content: center; }
   .section { padding: 72px 0; }
