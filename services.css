@@ -1,0 +1,230 @@
+/* ===================================================
+   STUNNING SMILES — SERVICE PAGES
+   Shared Styles (loaded in addition to style.css)
+   =================================================== */
+
+/* --- SERVICE HERO --- */
+.service-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, var(--charcoal) 60%, var(--dark) 100%);
+  padding: 72px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+.service-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(26,107,74,.2), transparent);
+}
+.service-hero--urgent {
+  background: linear-gradient(135deg, #1a0a0a 0%, #2c1010 60%, #1a0a0a 100%);
+}
+.service-hero--urgent::before {
+  background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(180,30,30,.2), transparent);
+}
+.service-hero--urgent .section-label {
+  color: #f87171;
+  background: rgba(220,38,38,.15);
+  border-color: rgba(220,38,38,.3);
+}
+.service-hero--urgent .sh-icon { background: rgba(220,38,38,.15); color: #f87171; }
+
+.service-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.back-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,.55);
+  font-size: .85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  transition: color .2s;
+}
+.back-link:hover { color: var(--gold); }
+
+.sh-icon {
+  width: 72px;
+  height: 72px;
+  background: rgba(26,107,74,.2);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: var(--green-mid);
+  border: 1px solid rgba(26,107,74,.3);
+}
+
+.service-hero h1 {
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
+}
+
+.sh-sub {
+  color: rgba(255,255,255,.7);
+  font-size: 1.1rem;
+  max-width: 580px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* --- SERVICE MAIN CONTENT --- */
+.service-main {
+  padding: 80px 24px;
+  max-width: 900px;
+}
+
+.sp-block {
+  margin-bottom: 72px;
+}
+.sp-block h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+.sp-block p {
+  margin-bottom: 16px;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+.sp-block p:last-child { margin-bottom: 0; }
+.sp-block em { color: var(--green); font-style: italic; }
+
+/* --- HIGHLIGHT GRID --- */
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 24px;
+}
+.hg-card {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: transform .2s, box-shadow .2s;
+}
+.hg-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.hg-card > i {
+  font-size: 1.5rem;
+  color: var(--green);
+  margin-bottom: 14px;
+  display: block;
+}
+.hg-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+.hg-card p  { font-size: .9rem; color: var(--body); margin: 0; line-height: 1.65; }
+
+/* --- STEPS --- */
+.sp-steps {
+  list-style: none;
+  counter-reset: steps;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+.sp-steps li {
+  counter-increment: steps;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  font-size: .95rem;
+  line-height: 1.7;
+}
+.sp-steps li::before {
+  content: counter(steps);
+  min-width: 32px;
+  height: 32px;
+  background: var(--green);
+  color: var(--white);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: .85rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.sp-steps li strong { color: var(--dark); }
+
+/* --- FAQ --- */
+.sp-faq { border-top: 1px solid var(--border); padding-top: 56px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--dark);
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--green); }
+.faq-q i { color: var(--subtle); transition: transform .3s; flex-shrink: 0; }
+.faq-item.open .faq-q i { transform: rotate(180deg); color: var(--green); }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .35s ease, padding .35s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+.faq-a p { font-size: .93rem; color: var(--body); line-height: 1.75; margin: 0; }
+
+/* --- CTA BLOCK --- */
+.sp-cta {
+  background: linear-gradient(135deg, var(--dark), var(--charcoal));
+  border-radius: 20px;
+  padding: 60px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.sp-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(26,107,74,.2), transparent);
+}
+.sp-cta > * { position: relative; z-index: 1; }
+.sp-cta h2 { color: var(--white); margin-bottom: 12px; }
+.sp-cta p  { color: rgba(255,255,255,.7); margin-bottom: 28px; max-width: 520px; margin-inline: auto; }
+
+.sp-cta--urgent { background: linear-gradient(135deg, #1a0505, #2c1010); }
+.sp-cta--urgent::before { background: radial-gradient(ellipse 70% 70% at 50% 50%, rgba(180,30,30,.2), transparent); }
+.sp-cta--urgent .btn-primary { background: #dc2626; border-color: #dc2626; }
+.sp-cta--urgent .btn-primary:hover { background: #b91c1c; border-color: #b91c1c; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .service-main { padding: 60px 24px; }
+  .sp-cta { padding: 40px 24px; }
+  .back-link { align-self: center; }
+  .highlight-grid { grid-template-columns: 1fr; }
+}
