@@ -359,7 +359,7 @@
       </div>
 
       <div class="contact-form fade-in-right">
-        <form id="appointmentForm" novalidate>
+        <form id="appointmentForm" novalidate action="https://formspree.io/f/xzeelzlr" method="POST">
           <h3>Request an Appointment</h3>
           <div class="form-row">
             <div class="form-group">
@@ -400,8 +400,12 @@
             <label for="message">Message or Questions</label>
             <textarea id="message" name="message" rows="4" placeholder="Tell us anything you'd like us to know before your visit..."></textarea>
           </div>
+          <!-- Honeypot field: hidden from real users, bots tend to fill it in -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <input type="hidden" name="_subject" value="New Appointment Request — Stunning Smiles" />
           <button type="submit" class="btn-primary full-width">Send Request <i class="fas fa-paper-plane"></i></button>
           <p class="form-note"><i class="fas fa-lock"></i> Your information is private and secure. We'll respond within 1 business day.</p>
+          <p class="form-error" id="formError">Sorry, something went wrong sending your request. Please call us at <a href="tel:7076348661">(707) 634-8661</a> or try again.</p>
         </form>
         <div class="form-success" id="formSuccess">
           <i class="fas fa-check-circle"></i>

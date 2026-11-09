@@ -145,9 +145,10 @@
     statsObserver.observe(el);
   });
 
-  /* --- FORM SUBMISSION --- */
+  /* --- FORM SUBMISSION (Formspree) --- */
   const form    = document.getElementById('appointmentForm');
   const success = document.getElementById('formSuccess');
+  const error   = document.getElementById('formError');
 
   if (form) {
     form.addEventListener('submit', (e) => {
@@ -166,16 +167,31 @@
       });
       if (!valid) return;
 
-      // Simulate submission
-      const btn = form.querySelector('button[type="submit"]');
+      const btn          = form.querySelector('button[type="submit"]');
+      const originalLabel = btn.innerHTML;
       btn.disabled    = true;
       btn.textContent = 'Sending…';
+      error.classList.remove('visible');
 
-      setTimeout(() => {
-        form.style.display    = 'none';
-        success.style.display = 'flex';
-        success.classList.add('visible');
-      }, 1000);
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (response.ok) {
+            form.style.display    = 'none';
+            success.style.display = 'flex';
+            success.classList.add('visible');
+          } else {
+            throw new Error('Submission failed');
+          }
+        })
+        .catch(() => {
+          btn.disabled  = false;
+          btn.innerHTML = originalLabel;
+          error.classList.add('visible');
+        });
     });
   }
 
