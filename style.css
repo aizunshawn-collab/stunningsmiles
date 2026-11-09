@@ -503,6 +503,11 @@ p  { font-size: 1rem; color: var(--body); }
 .card-link:hover { gap: 10px; }
 
 /* ===========================================
+   ADVANCED TECHNOLOGY
+   =========================================== */
+.technology { background: var(--white); }
+
+/* ===========================================
    ABOUT
    =========================================== */
 .about { background: var(--white); }
@@ -711,6 +716,11 @@ p  { font-size: 1rem; color: var(--body); }
 }
 .why-card h3 { color: var(--white); margin-bottom: 10px; font-size: 1.1rem; }
 .why-card p  { color: rgba(255,255,255,.65); font-size: .9rem; line-height: 1.7; }
+
+/* ===========================================
+   FINANCING & INSURANCE
+   =========================================== */
+.financing { background: var(--off-white); }
 
 /* ===========================================
    TESTIMONIALS

@@ -12,31 +12,36 @@
 
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY > 60;
-    navbar.classList.toggle('scrolled', scrolled);
-    backToTop.classList.toggle('visible', window.scrollY > 400);
+    if (navbar) navbar.classList.toggle('scrolled', scrolled);
+    if (backToTop) backToTop.classList.toggle('visible', window.scrollY > 400);
   }, { passive: true });
 
   /* --- HAMBURGER MENU --- */
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('open');
-  });
-
-  // Close nav when a link is clicked
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navLinks.classList.remove('open');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinks.classList.toggle('open');
     });
-  });
+
+    // Close nav when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
 
   /* --- BACK TO TOP --- */
-  backToTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  // backToTop only exists on the homepage; other pages don't include the button.
+  if (backToTop) {
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   /* --- INTERSECTION OBSERVER: fade-in animations --- */
   const observer = new IntersectionObserver(
