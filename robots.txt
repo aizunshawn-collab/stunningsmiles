@@ -1,0 +1,8 @@
+# Stunning Smiles Santa Rosa — robots.txt
+# NOTE: site is temporarily hosted on GitHub Pages. When the custom domain
+# (stunningsmiles.com) goes live, update the Sitemap URL below.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aizunshawn-collab.github.io/stunningsmiles/sitemap.xml
